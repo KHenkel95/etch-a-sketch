@@ -13,4 +13,13 @@ body{
     width: 400px;
     height: 400px;
     border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.squares{
+    flex: 1;
+    height: 100px;
+    background: red;
+    border: 1px solid black;
 }
