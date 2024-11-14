@@ -10,16 +10,14 @@ body{
 }
 
 .container{
-    width: 400px;
-    height: 400px;
+    flex: none;
+    width: 600px;
+    height: 600px;
     border: 1px solid black;
     display: flex;
     flex-wrap: wrap;
 }
 
 .squares{
-    flex: 1;
-    height: 100px;
-    background: red;
-    border: 1px solid black;
+    flex: auto;
 }
