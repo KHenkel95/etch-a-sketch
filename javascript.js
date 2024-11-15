@@ -14,7 +14,7 @@ function createGrid(){
 function colorSquares(){
     const squares = document.querySelectorAll(".squares");
     squares.forEach((square) => {
-        square.addEventListener("mouseover", () => {
+        square.addEventListener("mouseenter", () => {
             square.style.backgroundColor = "black";
         });
     });
