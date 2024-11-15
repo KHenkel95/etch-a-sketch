@@ -1,6 +1,7 @@
+const containerSize = 600;
+
 function createGrid(){
     const container = document.querySelector(".container");
-    let containerSize = 600;
     let gridSize = 50;
     let squareSize = containerSize/gridSize;
     for(let i = 0; i < (gridSize**2); i++){
