@@ -13,12 +13,17 @@ function createGrid(){
 }
 
 function colorSquares(){    
-    const squares = document.querySelectorAll(".squares");
+    let squares = getSquares();
     squares.forEach((square) => {
         square.addEventListener("mouseenter", () => {
             square.style.backgroundColor = "black";
         });
     });
+}
+
+function getSquares(){
+    const squares = document.querySelectorAll(".squares");
+    return squares;
 }
 
 createGrid();
