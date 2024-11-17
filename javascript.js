@@ -1,7 +1,7 @@
 const containerSize = 600;
+const container = document.querySelector(".container");
 
 function createGrid(){
-    const container = document.querySelector(".container");
     let gridSize = 50;
     let squareSize = containerSize/gridSize;
     for(let i = 0; i < (gridSize**2); i++){
@@ -12,7 +12,7 @@ function createGrid(){
     }
 }
 
-function colorSquares(){
+function colorSquares(){    
     const squares = document.querySelectorAll(".squares");
     squares.forEach((square) => {
         square.addEventListener("mouseenter", () => {
