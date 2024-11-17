@@ -22,8 +22,7 @@ function colorSquares(){
 }
 
 function getSquares(){
-    const squares = document.querySelectorAll(".squares");
-    return squares;
+    return document.querySelectorAll(".squares");
 }
 
 createGrid();
