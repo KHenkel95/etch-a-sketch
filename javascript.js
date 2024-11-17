@@ -1,8 +1,18 @@
 const containerSize = 600;
 const container = document.querySelector(".container");
+const resetButton = document.querySelector(".reset-button");
 
-function createGrid(){
-    let gridSize = 50;
+resetButton.addEventListener("click", () => {
+    let newGridSize = prompt("Please enter the size for your new grid. Max: 100");
+    let squares = getSquares();
+    squares.forEach((square) => {
+        container.removeChild(square);
+    }); 
+    createGrid(newGridSize);
+    colorSquares();
+})
+
+function createGrid(gridSize = 16){
     let squareSize = containerSize/gridSize;
     for(let i = 0; i < (gridSize**2); i++){
         const square = document.createElement("div");
