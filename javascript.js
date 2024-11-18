@@ -25,11 +25,11 @@ function createGrid(gridSize = 16){
     }
 }
 
-function colorSquares(){    
+function colorSquares(color = 'black'){    
     let squares = getSquares();
     squares.forEach((square) => {
         square.addEventListener("mouseenter", () => {
-            square.style.backgroundColor = "black";
+            square.style.backgroundColor = color;
         });
     });
 }
