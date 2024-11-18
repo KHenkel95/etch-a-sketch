@@ -1,6 +1,11 @@
 const containerSize = 600;
 const container = document.querySelector(".container");
 const resetButton = document.querySelector(".reset-button");
+const eraseButton = document.querySelector(".erase-button");
+
+eraseButton.addEventListener("click", () => {
+    colorSquares('white');
+});
 
 resetButton.addEventListener("click", () => {
     let newGridSize = prompt('Please enter the size for your new grid. Max: 100');
@@ -13,7 +18,7 @@ resetButton.addEventListener("click", () => {
     }); 
     createGrid(newGridSize);
     colorSquares();
-})
+});
 
 function createGrid(gridSize = 16){
     let squareSize = containerSize/gridSize;
