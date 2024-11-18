@@ -3,7 +3,10 @@ const container = document.querySelector(".container");
 const resetButton = document.querySelector(".reset-button");
 
 resetButton.addEventListener("click", () => {
-    let newGridSize = prompt("Please enter the size for your new grid. Max: 100");
+    let newGridSize = prompt('Please enter the size for your new grid. Max: 100');
+    while (newGridSize < 1 || newGridSize > 100){
+        newGridSize = prompt(`You entered ${newGridSize}. Please enter a number between 1 and 100`);
+    }
     let squares = getSquares();
     squares.forEach((square) => {
         container.removeChild(square);
