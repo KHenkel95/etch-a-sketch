@@ -2,9 +2,14 @@ const containerSize = 600;
 const container = document.querySelector(".container");
 const resetButton = document.querySelector(".reset-button");
 const eraseButton = document.querySelector(".erase-button");
+const drawButton = document.querySelector(".draw-button");
 
 eraseButton.addEventListener("click", () => {
     colorSquares('white');
+});
+
+drawButton.addEventListener("click", () => {
+    colorSquares('black');
 });
 
 resetButton.addEventListener("click", () => {
