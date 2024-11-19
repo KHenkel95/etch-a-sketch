@@ -1,4 +1,4 @@
-const gridContainerSize = 600;
+const gridContainerSize = 500;
 const gridContainer = document.querySelector(".grid-container");
 const buttonMenu = document.querySelector(".button-menu");
 

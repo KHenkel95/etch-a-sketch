@@ -15,8 +15,8 @@ body{
 
 .grid-container{
     flex: none;
-    width: 600px;
-    height: 600px;
+    width: 500px;
+    height: 500px;
     border: 1px solid black;
     display: flex;
     flex-wrap: wrap;
