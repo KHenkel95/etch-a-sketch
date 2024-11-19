@@ -9,7 +9,7 @@ body{
     align-items: center;
 }
 
-.container{
+.grid-container{
     flex: none;
     width: 600px;
     height: 600px;

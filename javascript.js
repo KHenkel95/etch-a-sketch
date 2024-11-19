@@ -1,5 +1,5 @@
-const containerSize = 600;
-const container = document.querySelector(".container");
+const gridContainerSize = 600;
+const gridContainer = document.querySelector(".grid-container");
 const buttonMenu = document.querySelector(".button-menu");
 
 buttonMenu.addEventListener("click", (event) => {
@@ -13,7 +13,7 @@ buttonMenu.addEventListener("click", (event) => {
             }
             let squares = document.querySelectorAll(".squares");
             squares.forEach((square) => {
-                container.removeChild(square);
+                gridContainer.removeChild(square);
             }); 
             createGrid(newGridSize);
             colorSquares();
@@ -35,12 +35,12 @@ function randomColor(){
 }
 
 function createGrid(gridSize = 16){
-    let squareSize = containerSize/gridSize;
+    let squareSize = gridContainerSize/gridSize;
     for(let i = 0; i < (gridSize**2); i++){
         const square = document.createElement("div");
         square.classList.add("squares");
         square.setAttribute("style", `width: ${squareSize}px; height: ${squareSize}px`);
-        container.appendChild(square);
+        gridContainer.appendChild(square);
     }
 }
 
