@@ -11,6 +11,7 @@ body{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    gap: 10px;
 }
 
 .grid-container{
@@ -28,4 +29,10 @@ body{
 
 .header{
     font-size: 30px;
+}
+
+.button-menu{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
