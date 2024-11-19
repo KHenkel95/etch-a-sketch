@@ -21,3 +21,7 @@ body{
 .squares{
     flex: auto;
 }
+
+.header{
+    font-size: 30px;
+}
