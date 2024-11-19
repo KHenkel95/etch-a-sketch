@@ -1,34 +1,33 @@
 const containerSize = 600;
 const container = document.querySelector(".container");
-const resetButton = document.querySelector(".reset-button");
-const eraseButton = document.querySelector(".erase-button");
-const drawButton = document.querySelector(".draw-button");
-const rainbowButton = document.querySelector(".rainbow-button");
+const buttonMenu = document.querySelector(".button-menu");
 
+buttonMenu.addEventListener("click", (event) => {
+    let target = event.target;
 
-eraseButton.addEventListener("click", () => {
-    colorSquares('white');
-});
-
-drawButton.addEventListener("click", () => {
-    colorSquares('black');
-});
-
-rainbowButton.addEventListener("click", () => {
-    rainbowColor();
-});
-
-resetButton.addEventListener("click", () => {
-    let newGridSize = prompt('Please enter the size for your new grid. Max: 100');
-    while (newGridSize < 1 || newGridSize > 100){
-        newGridSize = prompt(`You entered ${newGridSize}. Please enter a number between 1 and 100`);
+    switch(target.className){
+        case 'reset-button':
+            let newGridSize = prompt('Please enter the size for your new grid. Max: 100');
+            while (newGridSize < 1 || newGridSize > 100){
+                newGridSize = prompt(`You entered ${newGridSize}. Please enter a number between 1 and 100`);
+            }
+            let squares = document.querySelectorAll(".squares");
+            squares.forEach((square) => {
+                container.removeChild(square);
+            }); 
+            createGrid(newGridSize);
+            colorSquares();
+            break;
+        case 'erase-button':
+            colorSquares('white');
+            break;
+        case 'draw-button':
+            colorSquares('black');
+            break;
+        case 'rainbow-button':
+            rainbowColor();
+            break;
     }
-    let squares = getSquares();
-    squares.forEach((square) => {
-        container.removeChild(square);
-    }); 
-    createGrid(newGridSize);
-    colorSquares();
 });
 
 function randomColor(){
@@ -46,7 +45,7 @@ function createGrid(gridSize = 16){
 }
 
 function rainbowColor(){
-    let squares = getSquares();
+    let squares = document.querySelectorAll(".squares");
     squares.forEach((square) => {
         square.addEventListener("mouseenter", () => {
             square.style.backgroundColor = randomColor();
@@ -55,16 +54,12 @@ function rainbowColor(){
 }
 
 function colorSquares(color = 'black'){    
-    let squares = getSquares();
+    let squares = document.querySelectorAll(".squares");
     squares.forEach((square) => {
         square.addEventListener("mouseenter", () => {
             square.style.backgroundColor = color;
         });
     });
-}
-
-function getSquares(){
-    return document.querySelectorAll(".squares");
 }
 
 createGrid();
