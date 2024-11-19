@@ -3,6 +3,8 @@ const container = document.querySelector(".container");
 const resetButton = document.querySelector(".reset-button");
 const eraseButton = document.querySelector(".erase-button");
 const drawButton = document.querySelector(".draw-button");
+const rainbowButton = document.querySelector(".rainbow-button");
+
 
 eraseButton.addEventListener("click", () => {
     colorSquares('white');
@@ -10,6 +12,10 @@ eraseButton.addEventListener("click", () => {
 
 drawButton.addEventListener("click", () => {
     colorSquares('black');
+});
+
+rainbowButton.addEventListener("click", () => {
+    rainbowColor();
 });
 
 resetButton.addEventListener("click", () => {
@@ -25,6 +31,10 @@ resetButton.addEventListener("click", () => {
     colorSquares();
 });
 
+function randomColor(){
+    return 'rgb(' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ',' + Math.round(Math.random() * 255) + ')';
+}
+
 function createGrid(gridSize = 16){
     let squareSize = containerSize/gridSize;
     for(let i = 0; i < (gridSize**2); i++){
@@ -33,6 +43,15 @@ function createGrid(gridSize = 16){
         square.setAttribute("style", `width: ${squareSize}px; height: ${squareSize}px`);
         container.appendChild(square);
     }
+}
+
+function rainbowColor(){
+    let squares = getSquares();
+    squares.forEach((square) => {
+        square.addEventListener("mouseenter", () => {
+            square.style.backgroundColor = randomColor();
+        });
+    });
 }
 
 function colorSquares(color = 'black'){    
