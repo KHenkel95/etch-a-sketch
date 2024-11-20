@@ -8,8 +8,7 @@ body{
 
 .container{
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     gap: 10px;
 }
@@ -29,10 +28,13 @@ body{
 
 .header{
     font-size: 30px;
+    display: flex;
+    justify-content: center;
 }
 
 .button-menu{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     gap: 15px;
 }
