@@ -7,16 +7,7 @@ buttonMenu.addEventListener("click", (event) => {
 
     switch(target.className){
         case 'reset-button':
-            let newGridSize = prompt('Please enter the size for your new grid. Max: 100');
-            while (newGridSize < 1 || newGridSize > 100){
-                newGridSize = prompt(`You entered ${newGridSize}. Please enter a number between 1 and 100`);
-            }
-            let squares = document.querySelectorAll(".squares");
-            squares.forEach((square) => {
-                gridContainer.removeChild(square);
-            }); 
-            createGrid(newGridSize);
-            colorSquares();
+            resetGrid();
             break;
         case 'erase-button':
             colorSquares('white');
@@ -42,6 +33,19 @@ function createGrid(gridSize = 16){
         square.setAttribute("style", `width: ${squareSize}px; height: ${squareSize}px`);
         gridContainer.appendChild(square);
     }
+}
+
+function resetGrid(){
+    let newGridSize = prompt('Please enter the size for your new grid. Max: 100');
+            while (newGridSize < 1 || newGridSize > 100){
+                newGridSize = prompt(`You entered ${newGridSize}. Please enter a number between 1 and 100`);
+            }
+            let squares = document.querySelectorAll(".squares");
+            squares.forEach((square) => {
+                gridContainer.removeChild(square);
+            }); 
+            createGrid(newGridSize);
+            colorSquares();
 }
 
 function rainbowColor(){
