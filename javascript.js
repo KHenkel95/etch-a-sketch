@@ -1,8 +1,8 @@
 const gridContainerSize = 500;
-const gridContainer = document.querySelector(".grid-container");
-const buttonMenu = document.querySelector(".button-menu");
+const gridContainer = document.querySelector('.grid-container');
+const buttonMenu = document.querySelector('.button-menu');
 
-buttonMenu.addEventListener("click", (event) => {
+buttonMenu.addEventListener('click', (event) => {
     let target = event.target;
 
     switch(target.className){
@@ -28,9 +28,9 @@ function randomColor(){
 function createGrid(gridSize = 16){
     let squareSize = gridContainerSize/gridSize;
     for(let i = 0; i < (gridSize**2); i++){
-        const square = document.createElement("div");
-        square.classList.add("squares");
-        square.setAttribute("style", `width: ${squareSize}px; height: ${squareSize}px`);
+        const square = document.createElement('div');
+        square.classList.add('squares');
+        square.setAttribute('style', `width: ${squareSize}px; height: ${squareSize}px`);
         gridContainer.appendChild(square);
     }
 }
@@ -40,7 +40,7 @@ function resetGrid(){
             while (newGridSize < 1 || newGridSize > 100){
                 newGridSize = prompt(`You entered ${newGridSize}. Please enter a number between 1 and 100`);
             }
-            let squares = document.querySelectorAll(".squares");
+            let squares = document.querySelectorAll('.squares');
             squares.forEach((square) => {
                 gridContainer.removeChild(square);
             }); 
@@ -49,18 +49,18 @@ function resetGrid(){
 }
 
 function rainbowColor(){
-    let squares = document.querySelectorAll(".squares");
+    let squares = document.querySelectorAll('.squares');
     squares.forEach((square) => {
-        square.addEventListener("mouseenter", () => {
+        square.addEventListener('mouseenter', () => {
             square.style.backgroundColor = randomColor();
         });
     });
 }
 
 function colorSquares(color = 'black'){    
-    let squares = document.querySelectorAll(".squares");
+    let squares = document.querySelectorAll('.squares');
     squares.forEach((square) => {
-        square.addEventListener("mouseenter", () => {
+        square.addEventListener('mouseenter', () => {
             square.style.backgroundColor = color;
         });
     });
