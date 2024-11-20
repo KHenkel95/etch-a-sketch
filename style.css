@@ -36,3 +36,17 @@ body{
     justify-content: center;
     gap: 15px;
 }
+
+button{
+    padding: 15px;
+}
+
+.draw-button:focus{
+    background-color: black;
+    color: white;
+}
+
+.erase-button:focus{
+    background-color: black;
+    color: white;
+}
