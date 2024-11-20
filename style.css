@@ -43,6 +43,11 @@ button{
     padding: 15px;
 }
 
+.rainbow-button:focus{
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    color: white;
+}
+
 .draw-button:focus{
     background-color: black;
     color: white;
